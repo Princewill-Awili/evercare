@@ -1,0 +1,116 @@
+.main{
+    width: 100%;
+    height: 100vh;
+    background-image: url("/src/assets/evercare1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accessNode{
+    width: 25%;
+    height: 80vh;
+    background: white;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.logoArea{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.longLogo{
+    width: 100%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.accessArea{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 85%; 
+}
+
+.accessOptions{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.aOpt{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.aOptActive{
+    background-color: #E8F0FE;
+}
+
+.accessForms{
+    background-color: #E8F0FE;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+}
+
+.aFormTitle{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+.bold{
+    font-size: 0.8rem;
+    color: var(--text-grey);
+}
+
+.aForm{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+    gap: 20px;
+}
+
+.inputWrapper{
+    width: 100%;
+}
+
+.aFormInput{
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--lightGrey);
+    font-size: 0.9rem;
+    color: var(--text-grey);
+    padding-left: 10px;
+}
+
+.aFormInput:focus{
+    outline: none;
+}
+
+.bold>span{
+    font-weight: 600;
+    font-size: 0.8rem;
+}
