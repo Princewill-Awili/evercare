@@ -56,6 +56,7 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     font-size: 0.9rem;
+    cursor: pointer;
 }
 
 .aOptActive{
@@ -93,13 +94,30 @@
     gap: 20px;
 }
 
+.aFormSelect{
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--lightGrey);
+    font-size: 0.9rem;
+    color: var(--text-grey);
+    padding-left: 10px;
+}
+
+.aFormSelect:focus{
+    outline: none;
+}
+
 .inputWrapper{
     width: 100%;
+    height: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .aFormInput{
     width: 100%;
-    height: 40px;
+    height: 100%;
     border: 1px solid var(--lightGrey);
     font-size: 0.9rem;
     color: var(--text-grey);
@@ -110,7 +128,61 @@
     outline: none;
 }
 
+.inputIcon{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: transparent;
+    height: 100%;
+    width: 5%;
+    display: flex;
+    align-items: center;
+    color: var(--text-grey);
+    font-size: 1.2rem;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
 .bold>span{
     font-weight: 600;
     font-size: 0.8rem;
+}
+
+.aFormBtns{
+    width: 100%;
+    height: 50px;
+    padding: 0px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.loginBtn, .resetBtn{
+    width: 50%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+}
+
+.loginBtn{
+    background-color: #428BCA;
+}
+
+.resetBtn{
+    background-color: #DD4B39;
+}
+
+.miscBtns{
+    width: 100%;
+    font-size: 0.8rem;
+    color: var(--text-grey);
+    cursor: pointer;
+}
+
+.miscBtns:hover{
+    color: black;
 }

@@ -8,6 +8,11 @@
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+a{
+  color: inherit;
+  text-decoration: none;
+  font-size: inherit;
+}
 :root{
   --evercare-darkblue:#002355;
   --evercare-lightblue:#64C7E8;
