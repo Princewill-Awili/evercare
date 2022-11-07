@@ -74,11 +74,21 @@
 
 .aFormTitle{
     width: 100%;
-    height: 15%;
+    height: 12%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 0.8rem;
+}
+.error{
+    width: 100%;
+    height: 10px;
+    font-size: 0.8rem;
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 .bold{
     font-size: 0.8rem;
@@ -186,3 +196,55 @@
 .miscBtns:hover{
     color: black;
 }
+
+.nodeFooter{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: var(--text-grey);
+}
+
+
+
+@media screen and (max-width:1500px) {
+    .accessNode{
+        width: 25%;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .accessNode{
+        width: 35%;
+    }
+    
+}
+@media screen and (max-width:900px) {
+    .accessNode{
+        width: 50%;
+    }
+}
+@media screen and (max-width:600px) {
+    .accessNode{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .accessNode{
+        width: 90%;
+    }
+}
+
+
+
+@media screen and (max-width:400px) {
+    .accessNode{
+        width: 100%;
+        height: 100vh;
+
+    }
+}
+
