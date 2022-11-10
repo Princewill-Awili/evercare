@@ -1,0 +1,17 @@
+.navItem{
+     width: 100%;
+     height: 40px;
+     display: flex;
+     background-color: inherit;
+     color:var(--lightGrey);
+     font-size: 0.9rem;
+     padding-left: 20px;
+     align-items: center;
+     justify-content: flex-start;
+     cursor: pointer;
+}
+
+.navActive{
+     background-color: #000;
+     color: white;
+}

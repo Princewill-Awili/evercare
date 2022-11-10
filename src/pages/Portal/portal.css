@@ -23,8 +23,45 @@
     background-color: var(--evercare-darkblue);
     color: white;
     position: absolute;
+    display: flex;
+    align-items: center;
 
 }
+
+.tLeft,.tRight{
+    display: flex;
+    align-items: center;
+
+}
+.tLeft{
+    width: 60%;
+}
+.tRight{
+    width: 40%;
+    padding: 0px 20px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.tWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.userWrapper{
+    width: 60%;
+    
+}
+.homeWrapper{
+    width: 40%;
+}
+
+
+
+
+
 
 .navbar{
     width: 20%;
@@ -33,4 +70,7 @@
     position: absolute;
     top: 10%;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
