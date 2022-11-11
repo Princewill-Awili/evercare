@@ -1,0 +1,55 @@
+.menu{
+     width: 100%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     background-color: #ECF0F5;
+}
+
+.menuTop{
+     height: 40%;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     padding: 0px 10px;
+}
+
+.profilePic{
+     font-size: 10rem;
+     fill: var(--evercare-darkblue);
+}
+
+.userGenInfo,.userMedInfo{
+     width: 40%;
+     height: 100%;
+     margin-left: 15px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+}
+.info{
+     width: 100%;
+     text-align: left;
+     font-weight: 600;
+     color: var(--evercare-darkblue);
+}
+
+.userMedInfo{
+     margin-left: 10px;
+}
+
+.userVals{
+     color: black;
+     font-weight: normal;
+}
+
+.menuBottom{
+     width: 100%;
+     height: 60%;
+     display: flex;
+     gap: 20px;
+     flex-wrap: wrap;
+     padding: 20px 10px 0px 20px;
+}

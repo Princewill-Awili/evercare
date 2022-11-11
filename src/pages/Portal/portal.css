@@ -25,6 +25,8 @@
     position: absolute;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
 
 }
 
@@ -33,30 +35,83 @@
     align-items: center;
 
 }
+
+.ppText{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-right: 100px;
+}
 .tLeft{
-    width: 60%;
+    width: 65%;
+    height: 100%;
+    display: flex;
+
+}
+
+.evercare{
+    margin-right: 20px;
 }
 .tRight{
-    width: 40%;
+    width: 25%;
+    height: 100%;
     padding: 0px 20px;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
+    gap: 20px;
+    position: relative;
 }
 
 .tWrapper{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 5px;
     height: 100%;
+    cursor: pointer;
+}
+.userWrapper{
+    width: 70%;
 }
 
-.userWrapper{
-    width: 60%;
+.userIcon{
+    font-size: 2rem;
+}
+
+.home, .user{
+    font-size: 0.9rem;
+}
+
+.userPopUp{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: 100%;
+    right:-20px;
+    border: 1px solid white;
+    background-color: var(--evercare-darkblue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
     
 }
-.homeWrapper{
-    width: 40%;
+
+.popUpIcon{
+    margin-top: 10px;
+    font-size: 7rem;
+    margin-bottom: 15px;
 }
+
+.userName{
+    font-size: 1.5rem;
+}
+.userAge{
+    font-size: 0.8rem;
+}
+
+
+
 
 
 
@@ -73,4 +128,12 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.mainArea{
+    width: 80%;
+    height: 90%;
+    position: absolute;
+    left:20%;
+    top:10%;
 }
