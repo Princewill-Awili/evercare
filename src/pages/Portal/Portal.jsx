@@ -1,12 +1,11 @@
 import './portal.css'
 import NavItem from '../../components/NavItem/NavItem'
 import Menu from '../../components/Menu/Menu'
+import {sampleUser} from '../../utils/dummyData'
 
 
 import {FaHome as HomeIcon, FaUserCircle as UserIcon} from 'react-icons/fa'
-import { useState } from 'react'
-
-import { useContext } from 'react'
+import { useState,useContext, useEffect } from 'react'
 import { states } from '../../utils/context'
 
 const sections = [
@@ -24,8 +23,22 @@ const sections = [
 
 
 const Portal = () => {
+
   const [popUp, setPopUp] = useState(false);
-  const {activeSection} = useContext(states);
+  const {activeSection,user, setUser} = useContext(states);
+
+  useEffect(()=>{
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    if(storedUser){
+      setUser(storedUser);
+    }
+    else{
+      localStorage.setItem('user',JSON.stringify(sampleUser));
+      setUser(sampleUser);
+    }
+  },[]);
+
+ 
 
 
   return (
@@ -45,14 +58,15 @@ const Portal = () => {
               <span className="home">Home</span>
              </div>
              <div className="userWrapper tWrapper" onClick={()=>setPopUp(!popUp)}>
-              <UserIcon className='userIcon'/>
-              <span className="user">Patient's Name</span>
+              {user.avatar ? (<img src={user.avatar} alt="avatar" className='userAvatar'/>) : <UserIcon className='userIcon'/>}
+              <span className="user">{`${user.title} ${user.firstName} ${user.lastName}`}</span>
              </div>
             {popUp && (
               <div className="userPopUp"  onClick={()=>setPopUp(!popUp)}>
-                <UserIcon className='popUpIcon'/>
-                <span className="userName">Patient's Name</span>
-                <span className="userAge">xx Yrs/Age</span>
+                
+                {user.avatar ? (<img src={user.avatar} className="popUpImg" alt="userImg"/>):(<UserIcon className='popUpIcon'/>)}
+                <span className="userName">{`${user.title} ${user.firstName} ${user.lastName}`}</span>
+                <span className="userAge">{`${user.age} Years`}</span>
               </div>
             )}
           </div>

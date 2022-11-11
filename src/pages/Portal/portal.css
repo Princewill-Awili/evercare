@@ -27,6 +27,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0px 20px;
+    z-index: 999;
 
 }
 
@@ -76,9 +77,21 @@
 .userIcon{
     font-size: 2rem;
 }
+.userAvatar{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
 
-.home, .user{
+.home{
     font-size: 0.9rem;
+}
+
+.user{
+    font-size: 0.8rem;
 }
 
 .userPopUp{
@@ -94,6 +107,7 @@
     align-items: center;
     justify-content: flex-start;
     cursor: pointer;
+    z-index: 999;
     
 }
 
@@ -102,9 +116,15 @@
     font-size: 7rem;
     margin-bottom: 15px;
 }
+.popUpImg{
+    margin-top: 10px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
 
 .userName{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 .userAge{
     font-size: 0.8rem;

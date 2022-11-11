@@ -5,60 +5,70 @@ import {GiFirstAidKit as AppointmentIcon, GiReturnArrow as FeedbackIcon} from 'r
 import {BsUmbrellaFill as PasswordIcon} from 'react-icons/bs'
 
 import MenuTabs from '../MenuTabs/MenuTabs'
+import { useContext, useEffect, useState } from 'react'
+import { states } from '../../utils/context'
+
+
 
 const Menu = () => {
+
+
+
+  const {user} = useContext(states);
+ 
+
   return (
     <div className='menu'>
       <div className="menuTop">
-        <UserIcon className='profilePic'/>
+        {user.avatar ? (<img className='bigAvatar' src={user.avatar} alt="bigAvatar"/>) : (<UserIcon className='profilePic'/>)}
         <div className="userGenInfo">
 
           <span className="fullName info">
             Full Name:
-            <span className='userVals'></span>
+            <span className='userVals'>{` ${user.title} ${user.firstName} ${user.lastName}`}</span>
           </span>
 
           <span className="email info">
             Email:
-            <span className='userVals'></span>
+            <span className='userVals'>{` ${user.email}`}</span>
           </span>
 
           <span className="telNum info">
             Telephone:
-            <span className='userVals'></span>
+            <span className='userVals'>{` ${user.phone}`}</span>
           </span>
 
           <span className="huid info">
             Hospital UID:
-            <span className='userVals'></span>
+            <span className='userVals'>{` ${user.huid}`}</span>
           </span>
           <span className="age info">
             Age: 
-            <span className='userVals'>{`Yrs`}</span>
+            <span className='userVals'>{` ${user.age} Years`}</span>
           </span>
 
         </div>
         <div className="userMedInfo">
           <span className="height info">
             Height:
-            <span className='userVals'></span> 
+            <span className='userVals'>{` ${user.vitals.height} cm`}</span> 
           </span>
 
           <span className="weight info">
             Weight: 
-            <span className='userVals'></span>
+            <span className='userVals'>{` ${user.vitals.weight} kg`}</span>
           </span>
           <span className="bloodPressure info">
             BP (Last Reading):
-            <span className='userVals'></span>
+            <span className='userVals'>{` ${user.vitals.bp} mmHg`}</span>
           </span>
           <span className="bloodGroup info">
             Blood Group:
-            <span className='userVals'></span>
+            <span className='userVals'>{` ${user.vitals.blood_group}`}</span>
           </span>
           <span className="genotype info">
             Genotype:
-            <span className='userVals'></span>
+            <span className='userVals'>{` ${user.vitals.genotype}`}</span>
           </span>
           
         </div>
