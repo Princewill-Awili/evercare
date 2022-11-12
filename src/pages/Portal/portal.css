@@ -152,10 +152,11 @@
 
 .mainArea{
     width: 80%;
-    height: 90%;
+    height: fit-content;
     position: absolute;
     left:20%;
     top:10%;
+    background-color: #ECF0F5;
 }
 
 
@@ -184,6 +185,9 @@
     
 }
 @media screen and (max-width:900px){
+    .topbar{
+        width: 100%;
+    }
     .tLeft{
         width: 50%;
     }
@@ -192,6 +196,10 @@
     }
     .ppText{
         margin-right: 20px;
+    }
+
+    .userWrapper{
+        width: 100%;
     }
 }
 @media screen and (max-width:855px){
@@ -228,7 +236,29 @@
     }
 }
 @media screen and (max-width:600px){
-    
+    .topbar{
+        padding-right: 0px;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .tLeft{
+        width: 30%;
+    }
+    .ppText{
+        font-size: 0.8rem;
+    }
+    .evercare{
+        font-size: 0.6rem;
+    }
+    .tRight{
+        padding: 0px;
+        margin: 0;
+        width: 70%;
+    }
+    .homeWrapper{
+        display: none;
+    }
 }
 @media screen and (max-width:560px){
     .portalNode{

@@ -9,6 +9,8 @@
 .menuTop{
      height: 40%;
      width: 100%;
+     margin-top: 20px;
+     margin-bottom: 20px;
      display: flex;
      align-items: center;
      padding: 0px 10px;
