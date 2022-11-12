@@ -61,6 +61,7 @@ const Portal = () => {
               {user.avatar ? (<img src={user.avatar} alt="avatar" className='userAvatar'/>) : <UserIcon className='userIcon'/>}
               <span className="user">{`${user.title} ${user.firstName} ${user.lastName}`}</span>
              </div>
+             <div className="menuIcon"></div>
             {popUp && (
               <div className="userPopUp"  onClick={()=>setPopUp(!popUp)}>
                 

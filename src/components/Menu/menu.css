@@ -60,3 +60,37 @@
      flex-wrap: wrap;
      padding: 20px 10px 0px 20px;
 }
+
+
+@media screen and (max-width:1200px){
+    .bigAvatar{
+     width: 150px;
+     height: 150px;
+    }
+}
+
+@media screen and (max-width:750px){
+    .menu{
+     width: 100%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .bigAvatar{
+     width: 100px;
+     height: 100px;
+    }
+
+    .info,.userVals{
+     font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width:560px){
+     .bigAvatar{
+          display: none;
+     }
+    .menuTop{
+     display: none;
+    }
+}
