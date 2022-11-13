@@ -1,16 +1,18 @@
 import  './main.css'
 import Logo from "../../assets/evercareLogo2.png"
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import {BsEnvelopeFill as EnvelopeIcon} from 'react-icons/bs'
 import {AiFillLock as LockIcon} from 'react-icons/ai' 
 
 import { useNavigate } from 'react-router-dom'
+import { states } from '../../utils/context'
 
 const Main = () => {
     const [accessType, setAccessType] = useState('patient');
     const [uid, setUid]  = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
+    const {activeSection} = useContext(states)
 
     const navigate = useNavigate();
 
@@ -18,6 +20,7 @@ const Main = () => {
         if(uid.length > 0 && password.length > 0 ){
             const userInfo = {userID: uid, userPassword: password};
             localStorage.setItem('userInfo',JSON.stringify(userInfo));
+            localStorage.setItem('currentSection', JSON.stringify('Menu'));
             navigate('/portal')
         }
         else{

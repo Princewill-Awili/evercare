@@ -1,6 +1,7 @@
 import './portal.css'
 import NavItem from '../../components/NavItem/NavItem'
 import Menu from '../../components/Menu/Menu'
+import Visits from '../../components/Visits/Visits'
 import {sampleUser} from '../../utils/dummyData'
 
 
@@ -25,7 +26,7 @@ const sections = [
 const Portal = () => {
 
   const [popUp, setPopUp] = useState(false);
-  const {activeSection,user, setUser} = useContext(states);
+  const {activeSection,setActiveSection,user, setUser} = useContext(states);
 
   useEffect(()=>{
     const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -36,7 +37,19 @@ const Portal = () => {
       localStorage.setItem('user',JSON.stringify(sampleUser));
       setUser(sampleUser);
     }
+
+    const storedSection = JSON.parse(localStorage.getItem('currentSection'));
+    if(storedSection){
+      setActiveSection(storedSection);
+    }
+    
   },[]);
+
+  useEffect(()=>{
+    localStorage.setItem('currentSection',JSON.stringify(activeSection));
+  },[activeSection]);
+
+
 
  
 
@@ -85,7 +98,7 @@ const Portal = () => {
 
         <div className="mainArea">
           {activeSection === 'Menu' && <Menu/>}
-        
+          {activeSection === 'Visit History' && <Visits/>}
         </div>
       </div>
     </div>

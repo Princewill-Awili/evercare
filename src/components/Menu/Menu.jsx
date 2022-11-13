@@ -14,7 +14,7 @@ const Menu = () => {
 
 
 
-  const {user} = useContext(states);
+  const {user,setActiveSection} = useContext(states);
  
 
   return (
@@ -75,14 +75,14 @@ const Menu = () => {
       </div>
 
       <div className="menuBottom">
-        <MenuTabs svg={<HistoryIcon/>} bg="#00c0ef" textA="Visit" textB="History"/>
-        <MenuTabs svg={<DiagnosticsIcon/>} bg="#00a65a" textA="Diagnostics" textB="History"/>
-        <MenuTabs svg={<AppointmentIcon/>} bg="#dd4b39" textA="Appointment" textB="Request"/>
-        <MenuTabs svg={<ContactIcon/>} bg="#605ca8" textA="Contact" textB="Us"/>
-        <MenuTabs svg={<FeedbackIcon/>} bg="#39cccc" textA="Feedback" textB=""/>
-        <MenuTabs svg={<FAQIcon/>} bg="#001f3f" textA="FAQ" textB=""/>
-        <MenuTabs svg={<PasswordIcon/>} bg="#d81b60" textA="Change" textB="Password"/>
-        <MenuTabs svg={<PaymentIcon/>} bg="#f39c12" textA="Payment" textB="History"/>
+        <MenuTabs svg={<HistoryIcon/>} bg="#00c0ef" textA="Visit" textB="History" section="Visit History" />
+        <MenuTabs svg={<DiagnosticsIcon/>} bg="#00a65a" textA="Diagnostics" textB="History" section="Diagnostics History" />
+        <MenuTabs svg={<AppointmentIcon/>} bg="#dd4b39" textA="Appointment" textB="Request" section="Appointment Request"/>
+        <MenuTabs svg={<ContactIcon/>} bg="#605ca8" textA="Contact" textB="Us" section="Contact Us"/>
+        <MenuTabs svg={<FeedbackIcon/>} bg="#39cccc" textA="Feedback" textB="" section="FeedBack"/>
+        <MenuTabs svg={<FAQIcon/>} bg="#001f3f" textA="FAQ" textB="" section="Faq"/>
+        <MenuTabs svg={<PasswordIcon/>} bg="#d81b60" textA="Change" textB="Password" section="Change Password"/>
+        <MenuTabs svg={<PaymentIcon/>} bg="#f39c12" textA="Payment" textB="History" section="Payment History"/>
 
       </div>
     </div>

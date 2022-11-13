@@ -1,0 +1,40 @@
+.visits{
+     width: 100%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     padding: 10px;
+     background-color: #ECF0F5;
+}
+
+.visitLogsContainer{
+     width: 100%;
+     height: fit-content;
+     display: flex;
+     flex-direction: column;
+     margin-top: 20px;
+}
+
+.VlogHeader{
+     width: 100%;
+     height: 40px;
+     display: flex;
+     align-items: center;
+     font-weight: 600;
+}
+
+.header{
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding-left: 5px;
+}
+
+.sNum{
+     width: 5%;
+}
+
+.date{
+     width: 25%;
+}

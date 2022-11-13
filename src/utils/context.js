@@ -6,7 +6,7 @@ export const states = createContext();
 
 export const StateProvider = ({children}) => {
 
-     const [activeSection, setActiveSection] = useState("Menu");
+     const [activeSection, setActiveSection] = useState(JSON.parse(localStorage.getItem('currentSection')));
      const [user,setUser] = useState(sampleUser);
 
      return (
