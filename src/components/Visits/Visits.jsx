@@ -17,9 +17,10 @@ const Visits = () => {
   const VLog =({serial, date,time, doctor, specialization, vType, vSummary})=>{
 
     const displaySummary =(e)=>{
-      const selectedNote = visits.find(visit => visit.id === e.currentTarget.id);
+      const selectedNote = user.visits.filter(item => item.id === e.target.id);
       setNote(selectedNote);
       setShowNotes(!showNotes);
+      console.log(selectedNote);
     }
 
 
@@ -83,17 +84,17 @@ const Visits = () => {
               <h4 className="noteTitle">CONSULTATION SUMMARY</h4>
               <div className="noteGenInfo">
                 <div className="noteGenInfoLeft">
-                  <p>UHID:</p>
-                  <p>Age/Sex:</p>
-                  <p>Visit No:</p>
-                  <p>Telephone:</p>
-                  <p>Address:</p>
+                  <p>UHID:{` ${user.huid}`}</p>
+                  <p>Age/Sex:{` ${user.age}/${user.sex}`}</p>
+                  <p>Visit No:{` `}</p>
+                  <p>Telephone{` ${user.phone}`}:</p>
+                  <p>Address:{` ${user.address}`}</p>
                 </div>
                 <div className="noteGenInfoRight">
-                  <p>Patient Name:</p>
-                  <p>Doctor Name:</p>
-                  <p>Visit Date:</p>
-                  <p>Reffered By:</p>
+                  <p>Patient Name:{` ${user.title} ${user.firstName} ${user.lastName}`}</p>
+                  <p>Doctor Name:{` `}</p>
+                  <p>Visit Date:{` `}</p>
+                  <p>Reffered By:{` `}</p>
                 </div>
                  
               </div>
