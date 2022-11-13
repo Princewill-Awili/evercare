@@ -13,6 +13,7 @@
      display: flex;
      flex-direction: column;
      margin-top: 20px;
+     border: 1px solid lightgrey;
 }
 
 .VlogHeader{
@@ -20,10 +21,12 @@
      height: 40px;
      display: flex;
      align-items: center;
-     font-weight: 600;
+     font-weight: 600; 
+     background-color: lightgray;
 }
 
 .header{
+     font-size: 0.9rem;
      height: 100%;
      display: flex;
      align-items: center;
@@ -31,10 +34,151 @@
      padding-left: 5px;
 }
 
+
 .sNum{
      width: 5%;
 }
 
 .date{
      width: 25%;
+}
+
+.doc{
+     width: 35%;
+}
+
+.vType{
+     width: 25%;
+}
+
+.vSummary{
+     width: 10%;
+}
+
+.vLog{
+     width: 100%;
+     height:40px;
+     display: flex;
+     align-items: center;
+     font-size: 0.9rem;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding-left: 5px;
+     margin-top: 0px;
+     border-bottom: 1px solid lightgray;
+     background-color: #fff;
+}
+
+.member{
+     height: 40px;
+}
+
+.notesIcon{
+     font-size: 1.2rem;
+     color: grey;
+     cursor: pointer;
+}
+
+.note{
+     width: 100%;
+     height: 100%;
+     display: flex;
+     background-color: #fff;
+     padding: 10px 20px;
+     display: flex;
+     flex-direction: column;
+}
+
+.noteLogo{
+     width: 25%;
+     height: 50px;
+     object-fit: contain;
+     object-position: center;
+}
+
+.letterHead{
+     width: 100%;
+     height: fit-content;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+}
+
+.letterHead>p{
+     font-size: 0.8rem;
+}
+
+.noteTitle{
+     margin-top: 20px;
+     margin-bottom: 20px;
+     text-align: center;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 100%;
+}
+
+
+
+
+
+/*******Note Gen Summary****/
+
+.noteGenInfo{
+     border:1px solid black;
+     width: 100%;
+     height: 120px;
+     display: flex;
+}
+
+.noteGenInfoLeft,.noteGenInfoRight{
+     width: 50%;
+     padding: 10px;
+}
+
+
+@media screen and (max-width:740px) {
+     .sNum{
+          display: none;
+     }
+     .vType{
+          width: 20%;
+     }
+}
+
+@media screen and (max-width:700px) {
+     .VlogHeader{
+          display: none;
+     }
+     .visitLogsContainer{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding:0px 10px;
+          justify-content: flex-start;
+          gap: 2.5%;
+          border: none;
+     }
+     .vLog{
+          width: 45%;
+          height: 150px;
+          flex-direction: column;
+          margin-bottom: 20px;
+          margin-left: 2.5%;
+     }
+
+     .header{
+          width: 100%;
+     }
+}
+
+@media screen and (max-width:400px) {
+     .visitLogsContainer{
+          border: none;
+     }
+     .vLog{
+          width: 100%;
+     }
 }
