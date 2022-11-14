@@ -1,0 +1,10 @@
+.mobilemenu{
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     height: fit-content;
+     background-color: var(--evercare-darkblue);
+     position: fixed;
+     top: 10%;
+     left: 0px;
+}

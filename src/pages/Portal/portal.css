@@ -61,7 +61,7 @@
     margin-right: 20px;
 }
 .tRight{
-    width: 25%;
+    width: 30%;
     height: 100%;
     padding: 0px 20px;
     justify-content: flex-start;
@@ -138,6 +138,20 @@
     font-size: 0.8rem;
 }
 
+.menuIconWrapper{
+    margin-right: 20px;
+    height: 100%;
+    width: 10%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuIcon{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 
 
 
@@ -175,7 +189,7 @@
 @media screen and (max-width:1200px){
     
     .tRight{
-        width: 35%;
+        width: 45%;
     }
 }
 
@@ -185,6 +199,9 @@
     }
     .portalNode{
         height: 100vh;
+        width: 100%;
+    }
+    .topbar{
         width: 100%;
     }
     .navbar{
@@ -219,15 +236,19 @@
         left: 0px;
     }
     .ppText{
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     .evercare{
         font-size: 0.8rem;
     }
+    .menuIconWrapper{
+        display: flex;
+    }
+
 }
 @media screen and (max-width:690px){
     .tLeft{
-        width: 40%;
+        width: 35%;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;

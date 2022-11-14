@@ -5,13 +5,18 @@ import Menu from '../../components/Menu/Menu'
 import Visits from '../../components/Visits/Visits'
 import Diagnostics from '../../components/Diagnostics/Diagnostics'
 import Appointment from '../../components/Appointment/Appointment'
+import Contact from '../../components/Contact/Contact'
 
 import {sampleUser} from '../../utils/dummyData'
 
 
 import {FaHome as HomeIcon, FaUserCircle as UserIcon} from 'react-icons/fa'
+import {AiOutlineCloseSquare as CloseIcon} from 'react-icons/ai'
+import {TfiMenuAlt  as MenuIcon} from 'react-icons/tfi'
 import { useState,useContext, useEffect } from 'react'
 import { states } from '../../utils/context'
+import MobileMenu from '../../components/MobileMenu/MobileMenu'
+
 
 
 
@@ -32,7 +37,8 @@ const sections = [
 const Portal = () => {
 
   const [popUp, setPopUp] = useState(false);
-  const {activeSection,setActiveSection,user, setUser} = useContext(states);
+  
+  const {activeSection,setActiveSection,user, setUser,showMobileMenu, setShowMobileMenu} = useContext(states);
 
   useEffect(()=>{
     const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -80,7 +86,13 @@ const Portal = () => {
               {user.avatar ? (<img src={user.avatar} alt="avatar" className='userAvatar'/>) : <UserIcon className='userIcon'/>}
               <span className="user">{`${user.title} ${user.firstName} ${user.lastName}`}</span>
              </div>
-             <div className="menuIcon"></div>
+             <div className="menuIconWrapper">
+              {
+              showMobileMenu ? (<CloseIcon className='menuIcon closeIcon' onClick={()=>setShowMobileMenu(!showMobileMenu)}/>) :
+               (<MenuIcon className='menuIcon' onClick={()=>setShowMobileMenu(!showMobileMenu)}/>)
+              }
+              
+             </div>
             {popUp && (
               <div className="userPopUp"  onClick={()=>setPopUp(!popUp)}>
                 
@@ -103,10 +115,12 @@ const Portal = () => {
         </div>
 
         <div className="mainArea">
+          {showMobileMenu && <MobileMenu/>}
           {activeSection === 'Menu' && <Menu/>}
           {activeSection === 'Visit History' && <Visits/>}
           {activeSection === 'Diagnostics History' && <Diagnostics/>}
-          {activeSection=== 'Appointment Request' && <Appointment/>}
+          {activeSection === 'Appointment Request' && <Appointment/>}
+          {activeSection === 'Contact Us' && <Contact/>}
         </div>
       </div>
     </div>
