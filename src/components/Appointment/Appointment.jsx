@@ -6,6 +6,8 @@ import { useState } from 'react'
 const Appointment = () => {
      const [activeAppntTab, setActiveAppntTab] = useState('new');
      const user = JSON.parse(localStorage.getItem('user'));
+
+     
   return (
     <div className='appointment'>
      <TitleBar svg={<CalenderIcon/>} txt="Appointment Request" color="#DD4B39"/>
@@ -25,7 +27,7 @@ const Appointment = () => {
                </div>
           </div>
           <div className="appntNotice">
-               {activeAppntTab === 'new' ? `Note: This is an appointment request for self(${user.title} ${user.firstName} ${user.lastName})`:"Note: Please come 30 minutes before your appoinment time."}
+               {activeAppntTab === 'new' ? `Note: This is an appointment request for self(${user.title} ${user.firstName} ${user.lastName})`:"Note: Please come 30 minutes before your appointment time."}
                
           </div>
           {activeAppntTab === 'new' && (
@@ -63,21 +65,23 @@ const Appointment = () => {
                     </div>
 
                     <div className="inputHolder">
-                         <label>Appointment Time:</label>  
+                         <label>Appointment Time:</label>
+                         <input type="time" />  
                     </div>
 
-                    <div className="inputHolder">
+                    <div className="inputHolder remarks">
                          <label>Remarks(if any):</label>
                          <textarea cols={50} />
                     </div>
 
                     <div className="inputHolder tandc">
                          <input type="checkbox" />
-                         <label>By booking this appointment,I hereby agree to terms and conditions.</label>
+                         <label>By booking this appointment, I hereby agree to terms and conditions.</label>
                     </div>
 
                     <div className="formActions">
-
+                         <span className="makeAppnt">Make Appointment</span>
+                         <span className="resetAppnt">Reset</span>
                     </div>
                </div>
           )

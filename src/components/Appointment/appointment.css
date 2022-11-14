@@ -93,6 +93,7 @@
 
 .tandc{
      display: flex;
+     height: 30px;
      align-items: center;
      width: 100%;
      justify-content: flex-start;
@@ -102,7 +103,78 @@
      font-size: 0.9rem;
      font-weight: 600;
 }
+
 .tandc>input{
      width: 20px;
      height: 20px;
+}
+
+.formActions{
+     width: 100%;
+     height: 40px;
+     margin-top: 10px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 10px;
+}
+
+.makeAppnt, .resetAppnt{
+     width: 20%;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-weight: 600;
+     cursor: pointer;
+     border-radius: 5px;
+}
+
+.makeAppnt{
+     background-color: var(--evercare-darkblue);
+     color: white;
+}
+
+.resetAppnt{
+     background-color: #DD4B39;
+     color:white
+}
+
+@media screen and (max-width:750px){
+     .makeAppnt,.resetAppnt{
+          width: 40%;
+     }
+}
+
+@media screen and (max-width:600px){
+     .inputHolder{
+          height: 70px;
+          flex-direction: column;
+          width: 100%;
+     }
+     .inputHolder>label{
+          width: 100%;
+          text-align-last: left;
+          display: flex;
+     }
+     .inputHolder>select, .inputHolder>input{
+          height: 50%;
+          width: 100%;
+     }
+
+     .inputHolder>textarea{
+          width: 100%;
+          height: 50%;
+     }
+
+     .tandc{
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+     }
+
+     .tandc>input{
+          width: 15px;
+          height: 15px;
+     }
 }

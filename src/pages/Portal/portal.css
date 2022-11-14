@@ -26,11 +26,11 @@
 }
 
 .topbar{
-    width: 100%;
+    width: 90%;
     height: 10%;
     background-color: var(--evercare-darkblue);
     color: white;
-    position: absolute;
+    position: fixed; 
     display: flex;
     align-items: center;
     justify-content: space-between;
