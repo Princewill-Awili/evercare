@@ -25,50 +25,64 @@ const Appointment = () => {
                </div>
           </div>
           <div className="appntNotice">
-               Please Note: This is an appointment request for self ({`${user.title} ${user.firstName} ${user.lastName}`}).
+               {activeAppntTab === 'new' ? `Note: This is an appointment request for self(${user.title} ${user.firstName} ${user.lastName})`:"Note: Please come 30 minutes before your appoinment time."}
+               
           </div>
-          <div className="appntForm">
-               <div className="inputHolder">
-                    <label>Facility:</label>
-                    <select name="facility" id="facility">
-                         <option value="Evercare Hospital Lekki Ltd">
-                              Evercare Hospital Lekki Ltd
-                         </option>
-                    </select>
-               </div>
+          {activeAppntTab === 'new' && (
+               <div className="appntForm">
+                    <div className="inputHolder">
+                         <label>Facility:</label>
+                         <select name="facility" id="facility">
+                              <option value="Evercare Hospital Lekki Ltd">
+                                   Evercare Hospital Lekki Ltd
+                              </option>
+                         </select>
+                    </div>
 
-               <div className="inputHolder">
-                    <label>Specialization:</label>
-                    <select name="facility" id="facility">
-                         <option value="--select--">
-                              --Select--
-                         </option>
-                    </select>
-               </div>
+                    <div className="inputHolder">
+                         <label>Specialization:</label>
+                         <select name="facility" id="facility">
+                              <option value="--select--">
+                                   --Select--
+                              </option>
+                         </select>
+                    </div>
 
-               <div className="inputHolder">
-                    <label>Doctor:</label>
-                    <select name="facility" id="facility">
-                         <option value="--select--">
-                              --Select--
-                         </option>
-                    </select>
-               </div>
+                    <div className="inputHolder">
+                         <label>Doctor:</label>
+                         <select name="facility" id="facility">
+                              <option value="--select--">
+                                   --Select--
+                              </option>
+                         </select>
+                    </div>
 
-               <div className="inputHolder">
-                    <label>Appointment Date:</label>
-                    <input type="date" />
-               </div>
+                    <div className="inputHolder">
+                         <label>Appointment Date:</label>
+                         <input type="date" />
+                    </div>
 
-               <div className="inputHolder">
-                    <label>Appointment Time:</label>  
-               </div>
+                    <div className="inputHolder">
+                         <label>Appointment Time:</label>  
+                    </div>
 
-               <div className="inputHolder">
-                    <label>Remarks(if any):</label>
-                    <textarea cols={45} />
+                    <div className="inputHolder">
+                         <label>Remarks(if any):</label>
+                         <textarea cols={50} />
+                    </div>
+
+                    <div className="inputHolder tandc">
+                         <input type="checkbox" />
+                         <label>By booking this appointment,I hereby agree to terms and conditions.</label>
+                    </div>
+
+                    <div className="formActions">
+
+                    </div>
                </div>
-          </div>
+          )
+          }
+          
      </div>
     </div>
   )

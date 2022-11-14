@@ -90,3 +90,19 @@
 .inputHolder>input:focus{
      outline: none;
 }
+
+.tandc{
+     display: flex;
+     align-items: center;
+     width: 100%;
+     justify-content: flex-start;
+     gap: 10px;
+}
+.tandc>label{
+     font-size: 0.9rem;
+     font-weight: 600;
+}
+.tandc>input{
+     width: 20px;
+     height: 20px;
+}
