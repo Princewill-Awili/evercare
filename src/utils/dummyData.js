@@ -63,7 +63,77 @@ export const sampleUser = {
                summary:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi beatae temporibus corporis nihil, iusto, veritatis doloribus eum ipsa, expedita sint quos praesentium quo aperiam. Fugit officia perferendis dolorum voluptas aliquid."
           }
      ],
-     diagnostics:[],
+     diagnostics:{
+          lab:[
+               {
+                    serial:1,
+                    invoice:"DL001",
+                    service:"FULL BLOOD COUNT",
+                    date:"23/10/2022",
+                    status:"Finalized",
+                    action:"Download"
+               },
+               {
+                    serial:2,
+                    invoice:"DL002",
+                    service:"HBA1C (HS16)",
+                    date:"24/10/2022",
+                    status:"Pending",
+                    action:"None"
+               },
+               {
+                    serial:3,
+                    invoice:"DL003",
+                    service:"LIPIDS TEST",
+                    date:"25/10/2022",
+                    status:"Finalized",
+                    action:"Download"
+               },
+               {
+                    serial:4,
+                    invoice:"DL004",
+                    service:"ESR",
+                    date:"24/10/2022",
+                    status:"Pending",
+                    action:"None"
+               },
+               {
+                    serial:5,
+                    invoice:"DL005",
+                    service:"URINE TEST",
+                    date:"28/10/2022",
+                    status:"Finalized",
+                    action:"Download"
+               },
+          ],
+          radio:[
+               {
+                    serial:1,
+                    invoice:"DR001",
+                    service:"48HRS HOLTER TEST",
+                    date:"23/10/2022",
+                    status:"Finalized",
+                    action:"Download"
+               },
+               {
+                    serial:2,
+                    invoice:"DR002",
+                    service:"ADULT ECHOCARDIOGRAM",
+                    date:"24/10/2022",
+                    status:"Pending",
+                    action:"None"
+               },
+               {
+                    serial:3,
+                    invoice:"DR003",
+                    service:"ABDOMINAL ULTRASOUND",
+                    date:"25/10/2022",
+                    status:"Finalized",
+                    action:"Download"
+               },
+
+          ]
+     },
      appointments:[],
      payments:[]
 }

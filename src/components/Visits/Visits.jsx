@@ -17,10 +17,10 @@ const Visits = () => {
   const VLog =({serial, date,time, doctor, specialization, vType, vSummary})=>{
 
     const displaySummary =(e)=>{
-      const selectedNote = user.visits.filter(item => item.id === e.target.id);
+      const selectedNote = user.visits[e.currentTarget.id - 1];
       setNote(selectedNote);
       setShowNotes(!showNotes);
-      console.log(selectedNote);
+      console.log(note);
     }
 
 
@@ -28,7 +28,7 @@ const Visits = () => {
       <div className="vLog member">
           <span className="sNum header">{serial}</span>
           <span className="date header">{`${date} ${time}`}</span>
-          <span className="doc header">{`${doctor}(${specialization})`}</span>
+          <span className="doc header highLight">{`${doctor}(${specialization})`}</span>
           <span className="vType header">{vType}</span>
           <span className="vSummary header">
             <SummaryIcon id={serial} className="notesIcon" onClick={displaySummary}/>
@@ -40,7 +40,7 @@ const Visits = () => {
 
   return (
     <div className='visits'>
-      <TitleBar svg={<HistoryIcon/>} txt="Recent Doctor Visits"/>
+      <TitleBar svg={<HistoryIcon/>} txt="Recent Doctor Visits" color="#00C0EF"/>
       <div className="visitLogsContainer">
         {
           showNotes === false && 
@@ -84,20 +84,26 @@ const Visits = () => {
               <h4 className="noteTitle">CONSULTATION SUMMARY</h4>
               <div className="noteGenInfo">
                 <div className="noteGenInfoLeft">
-                  <p>UHID:{` ${user.huid}`}</p>
-                  <p>Age/Sex:{` ${user.age}/${user.sex}`}</p>
-                  <p>Visit No:{` `}</p>
-                  <p>Telephone{` ${user.phone}`}:</p>
-                  <p>Address:{` ${user.address}`}</p>
+                  <p>UHID:<span className='noteGenInfoVals'>{` ${user.huid}`}</span></p>
+                  <p>Age/Sex:<span className='noteGenInfoVals'>{` ${user.age}/${user.sex}`}</span></p>
+                  <p>Visit No:<span className='noteGenInfoVals'>{` ${note.id}`}</span></p>
+                  <p>Telephone:<span className='noteGenInfoVals'>{` ${user.phone}`}</span></p>
+                  <p>Address:<span className='noteGenInfoVals'>{` ${user.address}`}</span></p>
                 </div>
                 <div className="noteGenInfoRight">
-                  <p>Patient Name:{` ${user.title} ${user.firstName} ${user.lastName}`}</p>
-                  <p>Doctor Name:{` `}</p>
-                  <p>Visit Date:{` `}</p>
-                  <p>Reffered By:{` `}</p>
+                  <p>Patient Name:<span className='noteGenInfoVals'>{` ${user.title} ${user.firstName} ${user.lastName}`}</span></p>
+                  <p>Doctor Name:<span className='noteGenInfoVals'>{` ${note.doctor}`}</span></p>
+                  <p>Visit Date:<span className='noteGenInfoVals'>{` ${note.date} ${note.time} `}</span></p>
+                  <p>Referred By:<span className='noteGenInfoVals'>{` `}</span></p>
                 </div>
                  
               </div>
+              <h3 className='noteTitle'>DOCTOR'S NOTES</h3>
+              <p className="notes">
+                {note.summary}
+              </p>
+
+              <div className="closeNote" onClick={()=>setShowNotes(!showNotes)}>CLOSE NOTE</div>
             </div>
           )
         }

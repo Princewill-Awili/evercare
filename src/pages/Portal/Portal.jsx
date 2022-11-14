@@ -1,13 +1,19 @@
 import './portal.css'
+
 import NavItem from '../../components/NavItem/NavItem'
 import Menu from '../../components/Menu/Menu'
 import Visits from '../../components/Visits/Visits'
+import Diagnostics from '../../components/Diagnostics/Diagnostics'
+import Appointment from '../../components/Appointment/Appointment'
+
 import {sampleUser} from '../../utils/dummyData'
 
 
 import {FaHome as HomeIcon, FaUserCircle as UserIcon} from 'react-icons/fa'
 import { useState,useContext, useEffect } from 'react'
 import { states } from '../../utils/context'
+
+
 
 const sections = [
   "Menu", 
@@ -99,6 +105,8 @@ const Portal = () => {
         <div className="mainArea">
           {activeSection === 'Menu' && <Menu/>}
           {activeSection === 'Visit History' && <Visits/>}
+          {activeSection === 'Diagnostics History' && <Diagnostics/>}
+          {activeSection=== 'Appointment Request' && <Appointment/>}
         </div>
       </div>
     </div>

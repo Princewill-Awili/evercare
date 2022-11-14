@@ -15,6 +15,14 @@
     background-color:#E8F0FE;
     display: flex;
     position: relative;
+    overflow-y: scroll;
+}
+
+.portalNode::-webkit-scrollbar{
+    width: 10px;
+}
+.portalNode::-webkit-scrollbar-thumb{
+    background-color: #D3D3D3;
 }
 
 .topbar{
@@ -140,7 +148,7 @@
 
 .navbar{
     width: 20%;
-    height: 90%;
+    height: calc(100vh - 10% + 30px);
     background-color: #222D32;
     position: absolute;
     top: 10%;
@@ -266,6 +274,9 @@
     }
     .tLeft{
         width: 35%;
+    }
+    .portalNode::-webkit-scrollbar{
+        display: none;
     }
 }
 @media screen and (max-width:500px){

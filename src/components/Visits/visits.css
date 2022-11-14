@@ -34,6 +34,9 @@
      padding-left: 5px;
 }
 
+.highLight{
+     color: var(--evercare-darkblue);
+}
 
 .sNum{
      width: 5%;
@@ -138,6 +141,30 @@
      padding: 10px;
 }
 
+.noteGenInfoLeft>p, .noteGenInfoRight>p{
+     font-weight: 600;
+     font-size: 0.9rem;
+}
+
+.noteGenInfoVals{
+     font-weight: normal;
+     font-size: 0.9rem;
+}
+
+.closeNote{
+     padding: 5px;
+     background-color: var(--evercare-darkblue);
+     color: white;
+     border: 1px solid white;
+     margin-top: 50px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 20%;
+     margin-left: 40%;
+     cursor: pointer;
+}
+
 
 @media screen and (max-width:740px) {
      .sNum{
@@ -172,6 +199,19 @@
      .header{
           width: 100%;
      }
+     .noteGenInfo{
+          flex-direction: column;
+          height: fit-content;
+      }
+
+      .noteGenInfoLeft, .noteGenInfoRight{
+          width: 100%;
+      }
+
+     .closeNote{
+          width: 50%;
+          margin-left: 25%;
+     }
 }
 
 @media screen and (max-width:400px) {
@@ -181,4 +221,18 @@
      .vLog{
           width: 100%;
      }
+
+      .noteGenInfo{
+          flex-direction: column;
+          height: fit-content;
+      }
+
+      .noteGenInfoLeft, .noteGenInfoRight{
+          width: 100%;
+      }
+
+      .closeNote{
+          width: 80%;
+          margin-left: 10%;
+      }
 }

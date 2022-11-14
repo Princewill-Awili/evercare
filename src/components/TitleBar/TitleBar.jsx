@@ -1,9 +1,9 @@
 import './titlebar.css'
 
-const TitleBar = ({svg,txt,extras}) => {
+const TitleBar = ({svg,txt,color,extras}) => {
   return (
     <div className='titlebar'>
-     <div className="svgWrapper">
+     <div className="svgWrapper" style={{backgroundColor: color}}>
           {svg}
      </div>
      <div className="txtWrapper">

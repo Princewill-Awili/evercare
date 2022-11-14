@@ -1,0 +1,188 @@
+.diagnostics{
+     display: flex;
+     flex-direction: column;
+     padding: 10px;
+     width: 100%;
+     height: 100%;
+}
+
+.diagnosticsWrapper{
+     width: 100%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     margin-top: 20px;
+}
+
+.dTabs{
+     width: 100%;
+     height: 40px;
+     display: flex;
+     justify-content: flex-start;
+     gap: 1px;
+}
+
+.lab, .radio{
+     width: 100px;
+     height: 100%;
+     padding: 0px 10px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     color: #429AD8;
+     cursor: pointer;
+}
+
+.activeDTab{
+     border: 1px solid grey;
+     border-bottom: none;
+     color: black;
+     background-color: #D3D3D3;
+}
+.dLogsConatiner{
+     width: 100%;
+     height: fit-content;
+     display: flex;
+     flex-direction: column;
+     padding-bottom: 20px;
+
+}
+.dLogHeader{
+     width: 100%;
+     height: 40px;
+     display: flex;
+     background-color: #D3D3D3;
+}
+.dLogHead{
+     font-weight: 600;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 0.9rem;
+     text-align: center;
+}
+
+.dLog{
+     width: 100%;
+     display: flex;
+     height: 40px;
+     border-left: 1px solid #D3D3D3;
+     border-right: 1px solid #D3D3D3;
+     border-bottom: 1px solid #D3D3D3;
+}
+
+.dwn{
+     color:green;
+     cursor: pointer;
+}
+
+.stats{
+     background-color: aqua;
+}
+
+.members{
+     font-weight: normal;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 0.9rem;
+     text-align: center;
+}
+
+.sNum{
+     width: 5%;
+     
+     
+}
+
+.invoice{
+     width: 20%;
+}
+
+.service{
+     width: 35%;
+}
+
+.date{
+     width: 20%;
+}
+
+.status{
+     width: 10%;
+}
+
+.action{
+     width: 10%;
+}
+
+@media screen and (max-width:650px) {
+     .sNum{
+          display: none;
+     }
+     .service{
+          width: 30%;
+     }
+
+     .action{
+          width: 15%;
+     }
+}
+
+@media screen and (max-width:520px) {
+   .invoice{
+     width: 15%;
+   }
+
+   .status{
+     width: 15%;
+   }
+}
+
+@media screen and (max-width:500px) {
+     .dLogHeader{
+          display:none;
+     }
+
+     .diagnosticsWrapper{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          width: 100%;
+          height: 100%;
+     }
+
+     .dLog{
+          width: 45%;
+          height: 200px;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin: 10px 2.5%;
+          background-color: #fff;
+          border: 1px solid #D3D3D3;
+
+     }
+
+     .stats{
+          background-color: transparent;
+          color:black;
+     }
+
+     .members{
+          width: 100%;
+     }
+}
+
+@media screen and (max-width:400px) {
+     .dLog{
+          width: 80%;
+          margin-left: 10%;
+     }
+}
+
+
+
