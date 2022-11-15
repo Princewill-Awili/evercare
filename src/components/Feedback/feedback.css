@@ -1,0 +1,76 @@
+.feedback{
+     width: 100%;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     padding: 10px;
+}
+
+.lang{
+     display: flex;
+     width: 30%;
+     height: 50%;
+     position: absolute;
+     right: 5px;
+     gap: 10px;
+     align-items: center;
+}
+
+.pleaseRate{
+     width: 100%;
+     height: 40px;
+     display: flex;
+     align-items: center;
+     justify-content: flex-start;
+     background-color: #fff;
+     margin-top: 20px;
+     border-top: 3px solid lightgrey;
+     padding-left: 10px;
+     border-top-left-radius: 2px;
+     border-top-right-radius: 2px;
+}
+
+.lang>label{
+     font-size: 0.9rem;
+}
+.lang>select{
+     font-size: 0.9rem;
+}
+
+.lang>select:focus{
+     outline: none;
+}
+
+.ratesHeader{
+     width: 100%;
+     height: 40px;
+     display: flex;
+     align-items: center;
+     justify-content: flex-start;
+     background-color: #fff;
+     border-top: 1px solid lightgrey;
+}
+
+.ratesSpan{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100%;
+     font-size: 0.9rem;
+     font-weight: 600;
+}
+
+.rateNum{
+     width: 5%;
+}
+
+.question{
+     width: 27%;
+}
+
+.excellent,.good,.need,.poor{
+     width: 12%;
+}
+.remarks{
+     width: 20%;
+}

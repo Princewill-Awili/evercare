@@ -43,7 +43,7 @@ const Contact = () => {
 
 
       <div className="inputHolder">
-        <label>Remarks: </label>
+        <label>Remarks:<span className='required'>*</span> </label>
         <textarea cols={50}></textarea>
       </div>
 

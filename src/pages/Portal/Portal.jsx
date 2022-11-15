@@ -6,6 +6,8 @@ import Visits from '../../components/Visits/Visits'
 import Diagnostics from '../../components/Diagnostics/Diagnostics'
 import Appointment from '../../components/Appointment/Appointment'
 import Contact from '../../components/Contact/Contact'
+import MobileMenu from '../../components/MobileMenu/MobileMenu'
+import Feedback from '../../components/Feedback/Feedback'
 
 import {sampleUser} from '../../utils/dummyData'
 
@@ -15,7 +17,7 @@ import {AiOutlineCloseSquare as CloseIcon} from 'react-icons/ai'
 import {TfiMenuAlt  as MenuIcon} from 'react-icons/tfi'
 import { useState,useContext, useEffect } from 'react'
 import { states } from '../../utils/context'
-import MobileMenu from '../../components/MobileMenu/MobileMenu'
+
 
 
 
@@ -121,6 +123,7 @@ const Portal = () => {
           {activeSection === 'Diagnostics History' && <Diagnostics/>}
           {activeSection === 'Appointment Request' && <Appointment/>}
           {activeSection === 'Contact Us' && <Contact/>}
+          {activeSection === 'FeedBack' && <Feedback/>}
         </div>
       </div>
     </div>
