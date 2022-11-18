@@ -132,8 +132,8 @@
      font-size: 2rem;
 }
 
-.emojiActive{
-     color: green;
+.activeEmoji{
+     color:orange;
 }
 
 .remarksInput{

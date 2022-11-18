@@ -1,6 +1,7 @@
 import './feedback.css'
 import TitleBar from '../TitleBar/TitleBar'
 import {GiReturnArrow as FeedbackIcon} from 'react-icons/gi'
+import { useState } from 'react'
 
 import {
      BsEmojiLaughing as ExcellentIcon,
@@ -24,6 +25,8 @@ const Language = () => {
 
 const Question = ({sNum,questionArea,questions}) => {
 
+     const [answer, setAnswer] = useState("");
+
      return(
           <div className="questionWrapper">
                <div className="questionArea"><span>{sNum}</span>{questionArea}</div>
@@ -32,20 +35,29 @@ const Question = ({sNum,questionArea,questions}) => {
                          <div className="q1" key={index}>
                               <span className='question'>{question}</span>
                               <div className='smileys'>
-                                   <div className="emojiWrapper">
-                                        <ExcellentIcon className='emojis'/>
+                                   <div className={answer === 'excellent'? "activeEmoji emojiWrapper": "emojiWrapper"}>
+                                        <ExcellentIcon 
+                                             className='emojis'
+                                             onClick={()=> setAnswer('excellent')}
+                                        />
                                    </div>
-                                   <div className="emojiWrapper">
-                                        <GoodIcon className='emojis'/>     
+                                   <div className={answer === 'good'? "activeEmoji emojiWrapper": "emojiWrapper"}>
+                                        <GoodIcon 
+                                             className='emojis'
+                                             onClick={()=> setAnswer('good')}
+                                        />     
                                    </div>
-                                   <div className="emojiWrapper">
-                                        <GoodIcon className='emojis'/>
+                                   <div className={answer === 'improve'? "activeEmoji emojiWrapper": "emojiWrapper"}>
+                                        <CanImproveIcon 
+                                             className='emojis'
+                                             onClick={()=> setAnswer('improve')}
+                                        />
                                    </div>
-                                   <div className="emojiWrapper">
-                                        <CanImproveIcon className='emojis'/>
-                                   </div>
-                                   <div className="emojiWrapper">
-                                        <PoorIcon className='emojis'/>
+                                   <div className={answer === 'poor'? "activeEmoji emojiWrapper": "emojiWrapper"}>
+                                        <PoorIcon 
+                                             className='emojis'
+                                             onClick={()=> setAnswer('poor')}
+                                        />
                                    </div>
                               </div>
                               <input type="text" className='remarksInput' />
@@ -100,8 +112,25 @@ const Question = ({sNum,questionArea,questions}) => {
           sNum="4"
           questionArea="Cleaniness & Facility"
           questions={["Cleaniness & Facility"]}
-
      />
+
+     <Question
+          sNum="5"
+          questionArea="Treating Doctor"
+          questions={["Treating Doctor"]}
+     />
+
+     <Question
+          sNum="6"
+          questionArea="Visit completed in"
+          questions={["Visit completed in"]}
+     />  
+
+     <Question
+          sNum="7"
+          questionArea="Overall service quality"
+          questions={["Overall service quality "]}
+     />       
     </div>
   )
 }
