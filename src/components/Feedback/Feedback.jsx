@@ -29,7 +29,7 @@ const Question = ({sNum,questionArea,questions}) => {
 
      return(
           <div className="questionWrapper">
-               <div className="questionArea"><span>{sNum}</span>{questionArea}</div>
+               <div className="questionArea"><span>{`${sNum}. `}</span>{questionArea}</div>
                {
                     questions.map((question,index)=>(
                          <div className="q1" key={index}>
@@ -130,7 +130,29 @@ const Question = ({sNum,questionArea,questions}) => {
           sNum="7"
           questionArea="Overall service quality"
           questions={["Overall service quality "]}
-     />       
+     />  
+
+     <Question
+          sNum="8"
+          questionArea="Radiology(Xray, Usg)"
+          questions={["Radiology(Xray, Usg)"]}
+     />     
+
+     <Question
+          sNum="9"
+          questionArea="Pharmacy/ Dispensary Services"
+          questions={["Pharmacy/ Dispensary Services"]}
+     />  
+
+     <Question
+          sNum="10"
+          questionArea="Rate our hospital."
+          questions={["Rate our hospital"]}
+     />   
+
+     <div className="submitFeedback">
+          SUBMIT
+     </div> 
     </div>
   )
 }

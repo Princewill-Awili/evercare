@@ -108,7 +108,7 @@
 }
 
 .q1>span{
-     width: 27%;
+     width: 100%;
      font-size: 0.9rem;
 }
 
@@ -139,3 +139,76 @@
 .remarksInput{
      width: 20%;
 }
+
+.submitFeedback{
+     width: 20%;
+     height: 50px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: var(--evercare-darkblue);
+     color: white;
+     font-weight: 600;
+     margin-left: 40%;
+     margin-top: 20px;
+     margin-bottom: 20px;
+}
+
+
+
+
+@media screen and (max-width:650px) {
+     .ratesSpan{
+          font-size: 0.9rem;
+     }
+     .submitFeedback{
+          width: 50%;
+          margin-left: 25%;
+     }
+}
+
+@media screen and (max-width:500px) {
+     .ratesHeader{
+          display: none;
+     }
+
+     .questionWrapper{
+          flex-direction: column;
+     }
+
+     .q1{
+          display: flex;
+          flex-direction: column;
+          height: 80px;
+          width: 100%;
+          justify-content: flex-start;
+     }
+
+     .q1>span{
+          height: 40px;
+          min-width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 10px;
+     }
+
+    
+     .smileys{
+          width: 100%;
+     }
+
+     .lang{
+          width: 50%;
+     }
+
+     .remarksInput{
+          display: none;
+     }
+
+     .submitFeedback{
+          width: 80%;
+          margin-left: 10%;
+     }
+}
+
