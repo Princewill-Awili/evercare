@@ -10,14 +10,20 @@ const Faq = () => {
      const FaqItem = ({question, answer}) =>{
 
           const [showAnswer, setShowAnswer] = useState(true);
+          const [vanish, setVanish] = useState(false);
 
           return (
-               <div className="faqItem">
-                    <div className="faqItemQuestion" onClick={()=> setShowAnswer(!showAnswer)}>
-                         <span>{<ExpandIcon className='expandIcon'/>}</span>
+               <div className="faqItem" style={{height: showAnswer? "120px":"40px"}}>
+                    <div className="faqItemQuestion" onClick={()=>{
+                         setShowAnswer(!showAnswer);
+                         setTimeout(()=>{
+                              setVanish(!vanish);
+                         },300)
+                    }}>
+                         <span>{<ExpandIcon className='expandIcon' style={{color:!showAnswer?"":"var(--evercare-darkblue)"}}/>}</span>
                          {question}
                     </div>
-                    <div className="faqItemAnswer" style={{height: showAnswer?"100px":"40px", top: showAnswer? "40px":"0px"}}>
+                    <div className={vanish ? "vanish":"faqItemAnswer"} style={{height: showAnswer?"80px":"40px", top: showAnswer? "40px":"0px"}}>
                          {answer}
                     </div>
                </div>
