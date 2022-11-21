@@ -10,6 +10,7 @@ import MobileMenu from '../../components/MobileMenu/MobileMenu'
 import Feedback from '../../components/Feedback/Feedback'
 import Faq from '../../components/Faq/Faq'
 import Changepassword from '../../components/ChangePassword/Changepassword'
+import Payment from '../../components/Payment/Payment'
 
 import {sampleUser} from '../../utils/dummyData'
 
@@ -128,6 +129,7 @@ const Portal = () => {
           {activeSection === 'FeedBack' && <Feedback/>}
           {activeSection === 'Faq' && <Faq/>}
           {activeSection === 'Change Password' && <Changepassword/>}
+          {activeSection === 'Payment History' && <Payment/>}
         </div>
       </div>
     </div>
