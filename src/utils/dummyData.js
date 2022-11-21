@@ -137,3 +137,28 @@ export const sampleUser = {
      appointments:[],
      payments:[]
 }
+
+
+
+export const faqs = [
+     {
+          question:"OPD Management",
+          answer:"An organized OPD for handling large number of patients to be attended by multiple Doctors in an OPD. The complete cycle of an effective OPD from Registration, Patient History, Patient Diagnosis, and Prescription etc. is stored and managed effectively."
+     },
+     {
+          question:"IPD Management",
+          answer:"Complete Inpatient Management Module that manages all your hospital inpatient functionality from Patient registration to the billing with a complete tracking of Patient records."
+     },
+     {
+          question:"OT Management",
+          answer:"Operation theater module caters to the scheduling of operation theaters, surgery team, patient tracking, operation theater consumable management, accounting and Operation theater roster and notes with Death and Birth certificates."
+     },
+     {
+          question:"Pathology Software",
+          answer:"Pathology Lab Management facilitates definition of laboratory tests supporting fully configurable laboratory tests reports that are ordered in outpatient or Inpatient instantaneously."
+     },
+     {
+          question:"TPA Management",
+          answer:"Aarogya comes with an integrated TPA module offering seamless insurance management to process the bills settlement of the patients covered under insurance."
+     }
+]

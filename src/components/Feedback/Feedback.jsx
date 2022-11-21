@@ -151,7 +151,7 @@ const Question = ({sNum,questionArea,questions}) => {
      />   
 
      <div className="submitFeedback">
-          SUBMIT
+          SUBMIT FEEDBACK
      </div> 
     </div>
   )

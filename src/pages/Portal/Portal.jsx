@@ -8,6 +8,7 @@ import Appointment from '../../components/Appointment/Appointment'
 import Contact from '../../components/Contact/Contact'
 import MobileMenu from '../../components/MobileMenu/MobileMenu'
 import Feedback from '../../components/Feedback/Feedback'
+import Faq from '../../components/Faq/Faq'
 
 import {sampleUser} from '../../utils/dummyData'
 
@@ -124,6 +125,7 @@ const Portal = () => {
           {activeSection === 'Appointment Request' && <Appointment/>}
           {activeSection === 'Contact Us' && <Contact/>}
           {activeSection === 'FeedBack' && <Feedback/>}
+          {activeSection === 'Faq' && <Faq/>}
         </div>
       </div>
     </div>
