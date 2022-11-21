@@ -2,6 +2,7 @@ import './faq.css'
 import TitleBar from '../TitleBar/TitleBar'
 import {FaQuestionCircle as FAQIcon} from 'react-icons/fa'
 import {MdOutlineAdd as ExpandIcon} from 'react-icons/md'
+import {GrFormSubtract as SubtractIcon} from 'react-icons/gr'
 import { faqs } from '../../utils/dummyData'
 import { useState } from 'react'
 
@@ -20,7 +21,7 @@ const Faq = () => {
                               setVanish(!vanish);
                          },300)
                     }}>
-                         <span>{<ExpandIcon className='expandIcon' style={{color:!showAnswer?"":"var(--evercare-darkblue)"}}/>}</span>
+                         <span>{showAnswer ? <SubtractIcon className='expandIcon' style={{color:"var(--evercare-darkblue)"}}/> :<ExpandIcon className='expandIcon'/>}</span>
                          {question}
                     </div>
                     <div className={vanish ? "vanish":"faqItemAnswer"} style={{height: showAnswer?"80px":"40px", top: showAnswer? "40px":"0px"}}>

@@ -9,6 +9,7 @@ import Contact from '../../components/Contact/Contact'
 import MobileMenu from '../../components/MobileMenu/MobileMenu'
 import Feedback from '../../components/Feedback/Feedback'
 import Faq from '../../components/Faq/Faq'
+import Changepassword from '../../components/ChangePassword/Changepassword'
 
 import {sampleUser} from '../../utils/dummyData'
 
@@ -126,6 +127,7 @@ const Portal = () => {
           {activeSection === 'Contact Us' && <Contact/>}
           {activeSection === 'FeedBack' && <Feedback/>}
           {activeSection === 'Faq' && <Faq/>}
+          {activeSection === 'Change Password' && <Changepassword/>}
         </div>
       </div>
     </div>
