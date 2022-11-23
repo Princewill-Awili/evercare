@@ -11,8 +11,9 @@ import Feedback from '../../components/Feedback/Feedback'
 import Faq from '../../components/Faq/Faq'
 import Changepassword from '../../components/ChangePassword/Changepassword'
 import Payment from '../../components/Payment/Payment'
+import Loader from '../../components/Loader/Loader'
 
-import {sampleUser} from '../../utils/dummyData'
+
 
 import {FaHome as HomeIcon, FaUserCircle as UserIcon} from 'react-icons/fa'
 import {AiOutlineCloseSquare as CloseIcon} from 'react-icons/ai'
@@ -42,7 +43,7 @@ const Portal = () => {
 
   const [popUp, setPopUp] = useState(false);
   
-  const {activeSection,setActiveSection,user, setUser,users, setUsers,showMobileMenu, setShowMobileMenu} = useContext(states);
+  const {loading,setLoading,activeSection,setActiveSection,user, setUser,users, setUsers,showMobileMenu, setShowMobileMenu} = useContext(states);
 
   useEffect(()=>{
     const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -69,6 +70,7 @@ const Portal = () => {
 
   return (
     <div className="portal">
+      {loading && (<Loader text={"Browsing Records...Hold on"}/>)}
       <div className="portalNode">
 
         <div className="topbar">

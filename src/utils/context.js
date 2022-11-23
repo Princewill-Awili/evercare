@@ -10,9 +10,10 @@ export const StateProvider = ({children}) => {
      const [user,setUser] = useState({});
      const [users, setUsers] = useState([]);
      const [showMobileMenu, setShowMobileMenu] = useState(false);
+     const [loading, setLoading] = useState(false)
 
      return (
-          <states.Provider value={{activeSection, setActiveSection,users, setUsers, user,setUser,showMobileMenu, setShowMobileMenu}}>
+          <states.Provider value={{loading, setLoading,activeSection, setActiveSection,users, setUsers, user,setUser,showMobileMenu, setShowMobileMenu}}>
                {children}
           </states.Provider>
      )

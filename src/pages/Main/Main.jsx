@@ -9,44 +9,43 @@ import { states } from '../../utils/context'
 
 
 import { db } from '../../utils/firebase-config'
-import { getDocs, collection } from '@firebase/firestore'
+import {getDocs, collection } from '@firebase/firestore'
+import Loader from '../../components/Loader/Loader'
 
 const Main = () => {
     const [accessType, setAccessType] = useState('patient');
     const [uid, setUid]  = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
-    const {activeSection} = useContext(states);
+    const {loading, setLoading, activeSection,setActiveSection} = useContext(states);
 
-    const {users, setUsers} = useContext(states);
+    const {users, setUsers, setUser} = useContext(states);
     const usersCollectionRef = collection(db,"users");
 
     const navigate = useNavigate();
 
-    const handleLogin = () => {
-        if(uid.length > 0 && password.length > 0 ){
-
-            const getUsers = async () => {
-                const data = await getDocs(usersCollectionRef);
-                const storedUsers = await data.docs.map(doc =>({...doc.data(), id: doc.id}))
-                setUsers(storedUsers);
-              }
-              getUsers();
-
-              const validUser = users.find(user => user.huid === Number(uid));
-
-            
+    const handleLogin = async () => {
+        setLoading(true);
+        const data = await getDocs(usersCollectionRef);
+        const newUsers = await data.docs.map(doc => ({...doc.data(), id: doc.id}))
+        setUsers(newUsers);
+        
+        const validate = () =>{
+            const validUser = newUsers.find(user => user.password === password)
             if(validUser){
-                setUsers(validUser);
-                localStorage.setItem('user',JSON.stringify(validUser))
-                localStorage.setItem('currentSection', JSON.stringify('Menu'));
-                navigate('/portal')
-            } 
-           
+                localStorage.setItem('user',JSON.stringify(validUser));
+                localStorage.setItem('currentSection',JSON.stringify("Menu"))
+                setUser(validUser);
+                setLoading(false);
+                navigate('/portal');
+            }
+            else{
+                setLoading(false);
+                setError(true);
+            }
         }
-        else{
-            setError(true);
-        }
+
+        validate();
     }
 
 
@@ -57,6 +56,7 @@ const Main = () => {
 
   return (
     <div className='main'>
+        {loading && (<Loader text={"Loading...Please wait."}/>)}
         <div className="accessNode">
             <div className="logoArea">
                 <img className="longLogo" src={Logo} alt="longLogo" />
