@@ -14,14 +14,11 @@ import Payment from '../../components/Payment/Payment'
 
 import {sampleUser} from '../../utils/dummyData'
 
-
 import {FaHome as HomeIcon, FaUserCircle as UserIcon} from 'react-icons/fa'
 import {AiOutlineCloseSquare as CloseIcon} from 'react-icons/ai'
 import {TfiMenuAlt  as MenuIcon} from 'react-icons/tfi'
 import { useState,useContext, useEffect } from 'react'
 import { states } from '../../utils/context'
-
-
 
 
 
@@ -41,19 +38,18 @@ const sections = [
 
 const Portal = () => {
 
+  
+
   const [popUp, setPopUp] = useState(false);
   
-  const {activeSection,setActiveSection,user, setUser,showMobileMenu, setShowMobileMenu} = useContext(states);
+  const {activeSection,setActiveSection,user, setUser,users, setUsers,showMobileMenu, setShowMobileMenu} = useContext(states);
 
   useEffect(()=>{
     const storedUser = JSON.parse(localStorage.getItem('user'));
     if(storedUser){
       setUser(storedUser);
     }
-    else{
-      localStorage.setItem('user',JSON.stringify(sampleUser));
-      setUser(sampleUser);
-    }
+  
 
     const storedSection = JSON.parse(localStorage.getItem('currentSection'));
     if(storedSection){

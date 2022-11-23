@@ -14,7 +14,8 @@ const Menu = () => {
 
 
 
-  const {user,setActiveSection} = useContext(states);
+  const {setActiveSection} = useContext(states);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')))
  
 
   return (

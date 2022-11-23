@@ -7,21 +7,42 @@ import {AiFillLock as LockIcon} from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom'
 import { states } from '../../utils/context'
 
+
+import { db } from '../../utils/firebase-config'
+import { getDocs, collection } from '@firebase/firestore'
+
 const Main = () => {
     const [accessType, setAccessType] = useState('patient');
     const [uid, setUid]  = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
-    const {activeSection} = useContext(states)
+    const {activeSection} = useContext(states);
+
+    const {users, setUsers} = useContext(states);
+    const usersCollectionRef = collection(db,"users");
 
     const navigate = useNavigate();
 
     const handleLogin = () => {
         if(uid.length > 0 && password.length > 0 ){
-            const userInfo = {userID: uid, userPassword: password};
-            localStorage.setItem('userInfo',JSON.stringify(userInfo));
-            localStorage.setItem('currentSection', JSON.stringify('Menu'));
-            navigate('/portal')
+
+            const getUsers = async () => {
+                const data = await getDocs(usersCollectionRef);
+                const storedUsers = await data.docs.map(doc =>({...doc.data(), id: doc.id}))
+                setUsers(storedUsers);
+              }
+              getUsers();
+
+              const validUser = users.find(user => user.huid === Number(uid));
+
+            
+            if(validUser){
+                setUsers(validUser);
+                localStorage.setItem('user',JSON.stringify(validUser))
+                localStorage.setItem('currentSection', JSON.stringify('Menu'));
+                navigate('/portal')
+            } 
+           
         }
         else{
             setError(true);
