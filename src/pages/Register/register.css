@@ -152,6 +152,46 @@
      padding: 10px 0px;
  }
 
+ .tos{
+     display: flex;
+     padding: 10px;
+     text-align: justify;
+     flex-direction: column;
+ }
+
+ .agree{
+     margin-top: 20px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 0.8rem;
+     font-weight: 600;
+     color: var(--evercare-darkblue);
+     width: 100%;
+     height: 40px;
+ }
+
+ .agreeTxt{
+     font-size: 0.8rem;
+     margin-left: 10px;
+ }
+
+ .return{
+     width: 20%;
+     margin-left: 40%;
+     height: 50px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: var(--evercare-darkblue);
+     color: white;
+     font-weight: 600;
+     border-radius: 5px;
+     margin-top: 20px;
+     cursor: pointer;
+
+ }
+
 
 
 
@@ -201,6 +241,11 @@
           width: 20%;
      }
 
+     .return{
+          width: 40%;
+          margin-left: 30%;
+     }
+
 }
 
 @media screen and (max-width:700px) {
@@ -227,6 +272,11 @@
      .rFormBtn{
           width: 30%;
      }
+     .agreeTxt{
+          font-size: 0.8rem;
+          margin-top:10px;
+          margin-left: 10px;
+      }
 }
 
 @media screen and (max-width:500px) {
@@ -244,6 +294,10 @@
      .notice{
           position: absolute;
           bottom: 10%;
+     }
+     .return{
+          width: 80%;
+          margin-left: 10%;
      }
 }
 

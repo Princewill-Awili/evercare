@@ -1,50 +1,69 @@
 import './register.css'
 import Logo from "../../assets/evercareLogo2.png"
-import { useState } from 'react'
+import { useState,useContext } from 'react'
+import {states} from '../../utils/context'
 import { useNavigate } from 'react-router-dom'
+import {termsOfService} from '../../utils/dummyData'
+import Loader from '../../components/Loader/Loader'
 
 const Register = () => {
-
+  const {loading, setLoading} = useContext(states)
   const [activeRegTab, setActiveRegTab] = useState('general');   
   const navigate = useNavigate();
+
+
   return (
     <div className='register'>
+     {loading && (<Loader text="Organizing...Please wait."/>)}
      <div className="registerModal">
 
           <div className="rModalTop">
                <img src={Logo} alt='logo' className='rLogo'/>
                <span className="rModalTitle">Hospital Enrollment Form</span>
                <div className="miscItems">
-                    <span className='miscItem'>Terms of Service</span>
-                    <span className='miscItem' onClick={()=> navigate('/')}>Login</span>
+                    <span className='miscItem' onClick={()=> setActiveRegTab('terms')}>Terms of Service</span>
+                    <span className='miscItem' 
+                         onClick={()=>{
+                              setLoading(true);
+                              setTimeout(()=>{
+                                   setLoading(false);
+                                   navigate('/');
+                              },1000)
+                         }}
+                    >
+                         Login
+                    </span>
                </div>
           </div>
 
           <div className="rModalMain">
-               <div className="rModalTabs">
-                    <span 
-                         className={activeRegTab === 'general'? "rModalTab activeRTab": "rModalTab"}
-                         onClick={()=>setActiveRegTab('general')}
-                    >
-                         General
-                    </span>
-                    <span
-                         className={activeRegTab === 'medical'? "rModalTab activeRTab": "rModalTab"}
-                         onClick={()=>setActiveRegTab('medical')}
-                    >
-                         Medical
-                    </span>
-                    <span 
-                         className={activeRegTab === 'account'? "rModalTab activeRTab": "rModalTab"}
-                         onClick={()=>setActiveRegTab('account')}
-                    >
-                         Account Settings
-                    </span>
-               </div>
+               {activeRegTab === 'terms' ? (<></>):(
+                    <div className="rModalTabs">
+                         <span 
+                              className={activeRegTab === 'general'? "rModalTab activeRTab": "rModalTab"}
+                              onClick={()=>setActiveRegTab('general')}
+                         >
+                              General
+                         </span>
+                         <span
+                              className={activeRegTab === 'medical'? "rModalTab activeRTab": "rModalTab"}
+                              onClick={()=>setActiveRegTab('medical')}
+                         >
+                              Medical
+                         </span>
+                         <span 
+                              className={activeRegTab === 'account'? "rModalTab activeRTab": "rModalTab"}
+                              onClick={()=>setActiveRegTab('account')}
+                         >
+                              Account Settings
+                         </span>
+                    </div>
+               )}
+               
                <div className="rForm">
                     <p className="formTitle">
                          {
-                              (activeRegTab==="general" && "General Information") || (activeRegTab==="medical" && "Medical Information") || (activeRegTab==="account" && "Account Settings") 
+                              (activeRegTab==="general" && "General Information.") || (activeRegTab==="medical" && "Medical Information.") || (activeRegTab==="account" && "Account Settings.") || (activeRegTab === 'terms' && "Terms of Service.")
                          }
                     </p>
                     {activeRegTab === 'general' && (
@@ -144,6 +163,31 @@ const Register = () => {
                                         <input type="text" />
                                    </div>
                               </>
+                         )
+                    }
+                    {
+                         activeRegTab === 'terms' && (
+                              <div className="tos">
+                                   {termsOfService}
+                                   <span className="agree">
+                                        <input type="checkbox" />
+                                        <p className='agreeTxt'> I have read through the terms of service and hereby agree to it.</p>
+                                   </span>
+
+                                   <span className="return" 
+                                        onClick={()=>{
+                                             setLoading(true);
+                                             setTimeout(() => {
+                                                  setLoading(false)
+                                                  setActiveRegTab('general')
+                                             }, 1000);
+
+                                        }}
+                                   >
+                                        Return to Register
+                                   </span>
+     
+                              </div>
                          )
                     }
                </div>
