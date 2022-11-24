@@ -51,12 +51,66 @@
      justify-content: flex-end;
      gap: 20px;
      font-weight: 600;
-     color: var(--evercare-darkblue);
+     color:gray;
      align-items: center;
+}
+
+.miscItem{
+     cursor: pointer;
 }
 
 .rModalMain{
      width: 100%;
      height: 90% ;
-     border: 1px solid black;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     padding: 0px 10px;
 }
+
+.rModalTabs{
+     width: 100%;
+     height: 40px;
+     display: flex;
+     justify-content: flex-start;
+}
+
+.rModalTab{
+     width: 20%;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     cursor: pointer;
+}
+
+.activeRTab{
+     background-color: #E8F0FE;
+}
+
+.formTitle{
+     width: 100%;
+     height: 40px;
+     font-weight: 600;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 20px;
+}
+
+.rForm{
+     width: 100%;
+     height: 80%;
+     background-color:#E8F0FE ;
+     padding: 10px;
+     overflow-y: scroll;
+}
+
+.rForm::-webkit-scrollbar{
+     width: 10px;
+ }
+ .rForm::-webkit-scrollbar-thumb{
+     background-color: #D3D3D3;
+ }
