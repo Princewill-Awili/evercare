@@ -1,10 +1,12 @@
 import './register.css'
 import Logo from "../../assets/evercareLogo2.png"
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
 
   const [activeRegTab, setActiveRegTab] = useState('general');   
+  const navigate = useNavigate();
   return (
     <div className='register'>
      <div className="registerModal">
@@ -13,9 +15,8 @@ const Register = () => {
                <img src={Logo} alt='logo' className='rLogo'/>
                <span className="rModalTitle">Hospital Enrollment Form</span>
                <div className="miscItems">
-                    <span className='miscItem'>About Evercare</span>
-                    <span className='miscItem'>Legal</span>
-                    <span className='miscItem'>Back</span>
+                    <span className='miscItem'>Terms of Service</span>
+                    <span className='miscItem' onClick={()=> navigate('/')}>Login</span>
                </div>
           </div>
 
@@ -94,9 +95,62 @@ const Register = () => {
                     {
                          activeRegTab === 'medical' && (
                               <>
+                                   <div className="inputHolder">
+                                        <label>Age:<span className="required">*</span></label>
+                                        <input type="number" />
+                                   </div>
+                                   <div className="inputHolder">
+                                        <label>Sex:<span className="required">*</span></label>
+                                        <input type="text" />
+                                   </div>
+                                   <div className="inputHolder">
+                                        <label>Height:<span className="required">*</span></label>
+                                        <input type="number" />
+                                   </div>
+                                   <div className="inputHolder">
+                                        <label>Weight:<span className="required">*</span></label>
+                                        <input type="number" />
+                                   </div>
+                                   <div className="inputHolder">
+                                        <label>Blood Group:<span className="required">*</span></label>
+                                        <input type="text" />
+                                   </div>
+                                   <div className="inputHolder">
+                                        <label>Genotype:<span className="required">*</span></label>
+                                        <input type="text" />
+                                   </div>
+                                   <div className="inputHolder">
+                                        <label>Blood Presure:<span className="required">*</span></label>
+                                        <input type="text" />
+                                   </div>
+
                               </>
                          )
                     }
+                    {
+                         activeRegTab === 'account' && 
+                         (
+                              <>
+                                   <div className="inputHolder">
+                                        <label>Profile Picture:<span className="required">*</span></label>
+                                        <input type="file" />
+                                   </div>
+                                   <div className="inputHolder">
+                                        <label>Create Password:<span className="required">*</span></label>
+                                        <input type="text" />
+                                   </div>
+                                   <div className="inputHolder">
+                                        <label>Confirm Password:<span className="required">*</span></label>
+                                        <input type="text" />
+                                   </div>
+                              </>
+                         )
+                    }
+               </div>
+               <p className="warning notice">PLEASE NOTE: Ensure you have filled all sections above and read through terms of service before clicking on the "Register" button.</p>
+               <div className="rFormSubmit">
+                    <span className="rFormBtn rSubmit">Register</span>
+                    <span className="rFormBtn rReset">Reset</span>
                </div>
 
           </div>

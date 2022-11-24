@@ -50,8 +50,7 @@
      display: flex;
      justify-content: flex-end;
      gap: 20px;
-     font-weight: 600;
-     color:gray;
+     color:var(--evercare-darkblue);
      align-items: center;
 }
 
@@ -102,10 +101,11 @@
 
 .rForm{
      width: 100%;
-     height: 80%;
+     height: 70%;
      background-color:#E8F0FE ;
      padding: 10px;
      overflow-y: scroll;
+     margin-bottom: 10px;
 }
 
 .rForm::-webkit-scrollbar{
@@ -114,3 +114,144 @@
  .rForm::-webkit-scrollbar-thumb{
      background-color: #D3D3D3;
  }
+
+ .rFormSubmit{
+     width: 100%;
+     height: 10%;
+     margin-top: 5px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 20px;
+ }
+
+ .rFormBtn{
+     width: 15%;
+     height: 80%;
+     font-weight: 600;
+     border-radius: 5px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+ }
+
+ .rSubmit{
+     color:white;
+     background-color: #428BCA;
+ }
+
+ .rReset{
+     color: white;
+     background-color:#DD4B39;
+ }
+
+ .notice{
+     width: 100%;
+     background-color: white;
+     padding: 10px 0px;
+ }
+
+
+
+
+
+ @media screen and (max-width:1200px) {
+    .rModalTitle{
+     font-size: 1.5rem;
+    } 
+ }
+ @media screen and (max-width:1080px) {
+     
+}
+@media screen and (max-width:900px) {
+     .registerModal{
+          padding-top: 10px;
+          height: 100%;
+     }
+     .rModalTop{
+          flex-direction: column;
+     }
+     .rLogo{
+          width: 35%;
+          height: 40%;
+          margin-right:none;
+     }
+     .rModalTitle{
+          font-size: 1.2rem;
+          height: 40%;
+          width: 100%;
+     }
+
+     .miscItems{
+          height: 20%;
+          width: 100%;
+          font-size: 0.9rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          padding-right: 5%;
+     }
+
+     .miscItem{
+          font-size: 0.9rem;
+     }
+
+     .rFormBtn{
+          width: 20%;
+     }
+
+}
+
+@media screen and (max-width:700px) {
+     .rModalTop{
+          height: 120px;
+     }
+     .rLogo{
+          width: 40%;
+     }
+     .miscItems{
+          justify-content: space-between;
+          margin-bottom: 20px;
+     }
+     .rModalTab{
+          width: 25%;
+     }
+}
+@media screen and (max-width:600px) {
+     .registerModal{
+          width: 100%;
+          height: 100%;
+     }
+
+     .rFormBtn{
+          width: 30%;
+     }
+}
+
+@media screen and (max-width:500px) {
+     .rModalTab{
+          width: 33.3%;
+          font-size: 0.9rem;
+     }
+     .rLogo{
+          width: 60%;
+     }
+     .rFormSubmit{
+          position: absolute;
+          bottom: 0px;
+     }
+     .notice{
+          position: absolute;
+          bottom: 10%;
+     }
+}
+
+
+@media screen and (max-width:400px) {
+
+     
+     .rForm::-webkit-scrollbar{
+          width: 5px;
+     }
+}
