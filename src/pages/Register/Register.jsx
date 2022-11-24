@@ -77,15 +77,15 @@ const Register = () => {
                                    <input type="text" />
                               </div>
                               <div className="inputHolder">
-                                   <label>Next of Kin's Name:</label>
+                                   <label>Next of Kin's Name: <span className="required">*</span></label>
                                    <input type="text" />
                               </div>
                               <div className="inputHolder">
-                                   <label>Next of Kin's Address:</label>
+                                   <label>Next of Kin's Address:<span className="required">*</span></label>
                                    <input type="text" />
                               </div>
                               <div className="inputHolder">
-                                   <label>Next of Kin's Phone:</label>
+                                   <label>Next of Kin's Phone:<span className="required">*</span></label>
                                    <input type="text" />
                               </div>
                          </>
