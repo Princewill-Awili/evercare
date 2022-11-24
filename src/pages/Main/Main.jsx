@@ -17,7 +17,7 @@ const Main = () => {
     const [uid, setUid]  = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
-    const {loading, setLoading, activeSection,setActiveSection} = useContext(states);
+    const {registration, setRegistration,loading, setLoading, activeSection,setActiveSection} = useContext(states);
 
     const {users, setUsers, setUser} = useContext(states);
     const usersCollectionRef = collection(db,"users");
@@ -49,14 +49,20 @@ const Main = () => {
     }
 
 
+    const handleRegister = ()=>{
+        setRegistration("started");
 
-
-
+        setTimeout(() => {
+            setRegistration("pending");
+            navigate('/register');
+        }, 2000);
+    }
 
 
   return (
     <div className='main'>
         {loading && (<Loader text={"Fetching Records...Please wait."}/>)}
+        {registration==="started" && (<Loader text={"Setting Up Register...Please wait."}/>)}
         <div className="accessNode">
             <div className="logoArea">
                 <img className="longLogo" src={Logo} alt="longLogo" />
@@ -108,8 +114,7 @@ const Main = () => {
                                                 <div className="resetBtn">Reset</div>
                                             </div>
 
-                                            <div className="forgotBtn miscBtns">Forgot Password?</div>
-
+                                            <div className="registerBtn miscBtns" onClick={handleRegister}>Register</div>
                                             <div className="howToUse miscBtns"><a href='https://www.youtube.com/watch?v=egQj_MSSaX0' target="blank">How to use the Portal</a></div>
                                 </>
 
