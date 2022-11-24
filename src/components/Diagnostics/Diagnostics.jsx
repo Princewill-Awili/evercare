@@ -41,7 +41,7 @@ const Diagnostics = () => {
                          dType === 'lab' && (
                               <>
                                    {
-                                        user.diagnostics.lab.map((item,index) => (
+                                        user.diagnostics.lab?.map((item,index) => (
                                              <DLog key={index} {...item}/>
                                         ))
                                    }
@@ -52,7 +52,7 @@ const Diagnostics = () => {
                          dType === 'radio' && (
                               <>
                                    {
-                                        user.diagnostics.radio.map((item,index)=>(
+                                        user.diagnostics.radio?.map((item,index)=>(
                                              <DLog key={index} {...item}/>
                                         ))
                                    }

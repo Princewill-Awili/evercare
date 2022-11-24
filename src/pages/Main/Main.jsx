@@ -56,7 +56,7 @@ const Main = () => {
 
   return (
     <div className='main'>
-        {loading && (<Loader text={"Loading...Please wait."}/>)}
+        {loading && (<Loader text={"Fetching Records...Please wait."}/>)}
         <div className="accessNode">
             <div className="logoArea">
                 <img className="longLogo" src={Logo} alt="longLogo" />

@@ -55,7 +55,7 @@ const Visits = () => {
             </div>
   
           {
-            visits.map((visit,index)=>(
+            visits?.map((visit,index)=>(
               <VLog 
                 key={index} 
                 serial={visit.id} 
@@ -75,7 +75,7 @@ const Visits = () => {
         {
           showNotes && (
             <div className="note">
-              <img src={Logo} className='noteLogo'/>
+              <img src={Logo} className='noteLogo' alt='noteLogo'/>
               <div className="letterHead">
                 <h3>Evercare Hospital Lekki, Ltd.</h3>
                 <p className="address">1, Admiralty Way, Bisola Durosimi Etti Street, Lekki Phase 1,Lekki, Lagos.</p>
