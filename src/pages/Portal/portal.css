@@ -70,6 +70,11 @@
     position: relative;
 }
 
+.logoutIcon{
+    font-size: 1.3rem;
+    color: white;
+}
+
 .tWrapper{
     display: flex;
     align-items: center;
@@ -77,6 +82,9 @@
     gap: 5px;
     height: 100%;
     cursor: pointer;
+}
+.homeWrapper>svg{
+    color: white;
 }
 .userWrapper{
     width: 70%;
@@ -95,7 +103,7 @@
 }
 
 .home{
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .user{

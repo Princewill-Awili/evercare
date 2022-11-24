@@ -7,35 +7,62 @@ import {AiFillLock as LockIcon} from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom'
 import { states } from '../../utils/context'
 
+
+import { db } from '../../utils/firebase-config'
+import {getDocs, collection } from '@firebase/firestore'
+import Loader from '../../components/Loader/Loader'
+
 const Main = () => {
     const [accessType, setAccessType] = useState('patient');
     const [uid, setUid]  = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
-    const {activeSection} = useContext(states)
+    const {registration, setRegistration,loading, setLoading, activeSection,setActiveSection} = useContext(states);
+
+    const {users, setUsers, setUser} = useContext(states);
+    const usersCollectionRef = collection(db,"users");
 
     const navigate = useNavigate();
 
-    const handleLogin = () => {
-        if(uid.length > 0 && password.length > 0 ){
-            const userInfo = {userID: uid, userPassword: password};
-            localStorage.setItem('userInfo',JSON.stringify(userInfo));
-            localStorage.setItem('currentSection', JSON.stringify('Menu'));
-            navigate('/portal')
+    const handleLogin = async () => {
+        setLoading(true);
+        const data = await getDocs(usersCollectionRef);
+        const newUsers = await data.docs.map(doc => ({...doc.data(), id: doc.id}))
+        setUsers(newUsers);
+        
+        const validate = () =>{
+            const validUser = newUsers.find(user => user.password === password)
+            if(validUser){
+                localStorage.setItem('user',JSON.stringify(validUser));
+                localStorage.setItem('currentSection',JSON.stringify("Menu"))
+                setUser(validUser);
+                setLoading(false);
+                navigate('/portal');
+            }
+            else{
+                setLoading(false);
+                setError(true);
+            }
         }
-        else{
-            setError(true);
-        }
+
+        validate();
     }
 
 
+    const handleRegister = ()=>{
+        setRegistration("started");
 
-
-
+        setTimeout(() => {
+            setRegistration("pending");
+            navigate('/register');
+        }, 2000);
+    }
 
 
   return (
     <div className='main'>
+        {loading && (<Loader text={"Fetching Records...Please wait."}/>)}
+        {registration==="started" && (<Loader text={"Setting Up Register...Please wait."}/>)}
         <div className="accessNode">
             <div className="logoArea">
                 <img className="longLogo" src={Logo} alt="longLogo" />
@@ -87,8 +114,7 @@ const Main = () => {
                                                 <div className="resetBtn">Reset</div>
                                             </div>
 
-                                            <div className="forgotBtn miscBtns">Forgot Password?</div>
-
+                                            <div className="registerBtn miscBtns" onClick={handleRegister}>Register</div>
                                             <div className="howToUse miscBtns"><a href='https://www.youtube.com/watch?v=egQj_MSSaX0' target="blank">How to use the Portal</a></div>
                                 </>
 

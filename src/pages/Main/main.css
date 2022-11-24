@@ -176,6 +176,7 @@
     justify-content: center;
     color: white;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .loginBtn{

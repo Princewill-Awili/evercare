@@ -11,17 +11,16 @@ import Feedback from '../../components/Feedback/Feedback'
 import Faq from '../../components/Faq/Faq'
 import Changepassword from '../../components/ChangePassword/Changepassword'
 import Payment from '../../components/Payment/Payment'
+import Loader from '../../components/Loader/Loader'
+import { useNavigate } from 'react-router-dom'
 
-import {sampleUser} from '../../utils/dummyData'
 
-
+import {RiLogoutBoxRLine as LogOutIcon} from 'react-icons/ri'
 import {FaHome as HomeIcon, FaUserCircle as UserIcon} from 'react-icons/fa'
 import {AiOutlineCloseSquare as CloseIcon} from 'react-icons/ai'
 import {TfiMenuAlt  as MenuIcon} from 'react-icons/tfi'
 import { useState,useContext, useEffect } from 'react'
 import { states } from '../../utils/context'
-
-
 
 
 
@@ -41,20 +40,18 @@ const sections = [
 
 const Portal = () => {
 
+  
+  const navigate = useNavigate();
   const [popUp, setPopUp] = useState(false);
   
-  const {activeSection,setActiveSection,user, setUser,showMobileMenu, setShowMobileMenu} = useContext(states);
+  const {isLoggedOut, setIsLoggedOut,loading,activeSection,setActiveSection,user, setUser,users, setUsers,showMobileMenu, setShowMobileMenu} = useContext(states);
 
   useEffect(()=>{
     const storedUser = JSON.parse(localStorage.getItem('user'));
     if(storedUser){
       setUser(storedUser);
     }
-    else{
-      localStorage.setItem('user',JSON.stringify(sampleUser));
-      setUser(sampleUser);
-    }
-
+  
     const storedSection = JSON.parse(localStorage.getItem('currentSection'));
     if(storedSection){
       setActiveSection(storedSection);
@@ -67,12 +64,20 @@ const Portal = () => {
   },[activeSection]);
 
 
-
+  const logout =()=> {
+    setIsLoggedOut(!isLoggedOut);
+    setTimeout(() => {
+      setIsLoggedOut(false);
+      navigate('/');
+    }, 1000);
+  }
  
 
 
   return (
     <div className="portal">
+      {loading && (<Loader text="Browsing Records...Hold on"/>)}
+      {isLoggedOut && (<Loader text="Closing files...Logging Out"/>)}
       <div className="portalNode">
 
         <div className="topbar">
@@ -83,9 +88,9 @@ const Portal = () => {
           </div>
 
           <div className="tRight">
-             <div className="homeWrapper tWrapper">
-              <HomeIcon className='homeIcon'/>
-              <span className="home">Home</span>
+             <div className="homeWrapper tWrapper" onClick={logout}>
+              <LogOutIcon className='logoutIcon' style={{color:"white"}}/>
+              <span className="home" onClick={logout}>Log Out</span>
              </div>
              <div className="userWrapper tWrapper" onClick={()=>setPopUp(!popUp)}>
               {user.avatar ? (<img src={user.avatar} alt="avatar" className='userAvatar'/>) : <UserIcon className='userIcon'/>}
