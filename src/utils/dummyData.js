@@ -165,3 +165,15 @@ export const faqs = [
 
 
 export const termsOfService = "Welcome to Evercare Hospital Lekki Portal. This portal belongs to Evercare Hospital Lekki Limited ('Evercare'), an integrated healthcare delivery platform operating in Nigeria. Evercare helps communities thrive by improving healthcare and leveraging technology and integration to increase the quality of care. Evercare is building a foundation of continuous quality improvement and standardized care to improve clinical outcomes and patient safety.The Terms and Conditions ('Terms') contained herein on this webpage, shall govern your access to and use of this website, including all pages, images, illustrations, designs, photographs, video clips, text, icons, designs written information, and other materials that appear on this website (together the Website). Please read these Terms carefully. By accessing the Website and/or using the online services, you agree to be bound by the following Terms. If you do not accept any of these Terms, you must immediately discontinue your access to this Website and/or use of the online services.By using our Website and/or online services, you accept these Terms in full."
+
+export const generateUHID = () => {
+     const numStr = [];
+
+     for(let i = 0; i < 5; i++){
+          const num = Math.floor(Math.random()*10);
+          numStr.push(num.toString()) 
+     }
+
+     return parseInt(numStr.join().replaceAll(",","")); 
+}
+
