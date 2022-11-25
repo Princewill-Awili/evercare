@@ -11,6 +11,8 @@ import { nanoid } from 'nanoid'
 import { storage, db } from '../../utils/firebase-config'
 import {ref, uploadBytes, listAll, getDownloadURL} from 'firebase/storage'
 
+import {collection, addDoc} from '@firebase/firestore'
+
 const Register = () => {
 
      //All states from the form
@@ -47,7 +49,7 @@ const Register = () => {
 
 
 
-  const submitRegForm = () => {
+  const submitRegForm = async () => {
 
      const newUser = {
           title:title,
@@ -78,11 +80,13 @@ const Register = () => {
           diagnostics:[]
      }
 
-     console.log(newUser);
+     const userCollectionRef = collection(db,"users");
+
+     await addDoc(userCollectionRef,newUser);
+
 
 
      if(pic === null) return;
-
      //uploading images to firebase storage
      const imageRef = ref(storage,`avatars/${pic.name + nanoid()}`)// References to Image Folder
      uploadBytes(imageRef,pic).then(()=>alert("Avatar Uploaded Successfully"));
