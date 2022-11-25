@@ -247,7 +247,7 @@ const Register = () => {
                          (
                               <>
                                    <div className="inputHolder">
-                                        <label>Profile Picture:<span className="required">*</span></label>
+                                        <label>Profile Picture:</label>
                                         <input type="file" accept="image/png, image/jpeg"  onChange={e => setPic(e.target.files[0])} />
                                    </div>
                                    <div className="inputHolder">
